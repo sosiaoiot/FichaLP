@@ -18,14 +18,29 @@
  * 
  */
 int main() {
-    int n_botas = 0, n_sandalias = 0, n_outro = 0, calcado, n_botas_temp, n_sandalias_temp, n_outro_temp;
+    int n_botas = 0, n_sandalias = 0, n_outro = 0, calcado, n_botas_temp, n_sandalias_temp, n_outro_temp, verificacao = 0;
     long int nif;
     float mao_obra, rest_custos, custo_total, margem, desc_total, valor_total, total_s_desconto;
     char perfis[50], codigo_desconto[] = "vski", codigo[50];
     
-    printf("Introduza o seu perfil: \n");
-    scanf("%s", perfis);
-    
+    do{
+        printf("Introduza o seu perfil: \n");
+        scanf("%s", perfis);
+
+        if ((strcmp(perfis, "revendedor") == 0)){
+            printf("Perfi valido!!\n");
+            verificacao = 1;
+        }
+        else if((strcmp(perfis, "cliente") == 0)){
+            printf("Perfi valido!!\n");
+            verificacao = 1;
+        }
+        else{
+            printf("Perfil Invalido! Volte a tentar!\n");
+            verificacao = 0;
+        }
+    }while(verificacao == 0);
+            
     printf("Introduza o seu nif: \n");
     scanf("%ld", &nif);
     
